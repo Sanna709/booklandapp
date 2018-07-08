@@ -1,0 +1,31 @@
+<div class="bgimg w3-display-container w3-text-white">
+  <div class="container">
+
+    <div class="row">
+      <div class="col"></div>
+      <h1 class="" style="text-align:center;">
+        <i class="fab fa-blogger-b"></i>ookland</h1>
+      <div class="col"></div>
+    </div>
+    <h1 *ngIf="NoWishlist" style="text-align:center;font-family:'Courier';height: 200px;color:black">
+          Empty Wishlist!!
+      </h1>
+
+    <div class="row" id="booklist">
+      <div class="card mx-2 p-4" style="background-color: rgb(0,0,0,0.5);margin-bottom: 20px" *ngFor="let data of list">
+        <img class="card-img-top" src={{data.Photo}} alt="Card image cap" style="width: 200px;height:150px">
+        <div class="card-body">
+          <h5 style="text-align: center" class="card-title">
+            <b>{{data.BookName}}</b>
+          </h5>
+          <p style="text-align: center" class="card-text">By : {{data.AuthorName}}</p>
+          <p style="text-align: center" class="card-text">Rs.{{data.Price}}</p>
+          <p style="text-align: center" class="card-text">
+            <button class="btn btn-primary" [id]="data.BookId" (click)="onclick($event)" style="width:170px;align-content:center;margin-right:5px">View Details</button>
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>

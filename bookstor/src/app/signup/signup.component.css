@@ -1,0 +1,29 @@
+
+#signupbox {
+    margin-top: 30px;
+}
+
+#signupbox > div:first-child {        
+    padding-bottom: 10px;    
+}
+
+#form > div {
+    margin-bottom: 25px;
+}
+
+#form > div:last-child {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+body,h1 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+.bgimg {
+    background-image: url(https://res.cloudinary.com/dp8x0d1mj/image/upload/v1531034095/back.jpg);
+    min-height:100vh;
+    background-position: center;
+    background-size: cover;
+    overflow-y: auto
+}
+

@@ -1,0 +1,35 @@
+<div class="bgimg w3-display-container w3-text-white">
+  <div class="container">
+
+    <div class="row" style="color: black">
+      <div class="col"></div>
+      <h1 class="" style="text-align:center;">
+        <i class="fab fa-blogger-b"></i>ookland</h1>
+      <div class="col"></div>
+    </div>
+
+    <div class="row" style="margin:auto;width:80vw;height:70vh;background-color: rgb(0,0,0,0.5)">
+      <div class="col" style="margin-top:30px;margin-left:30px">
+        <img src={{data.Photo}} style="width:30vw;height:60vh">
+      </div>
+      <div class="col" style="margin: auto">
+        <h1 style="text-align: center ; font-family:'Courier New', Courier, monospace">
+          <b><u>{{data.BookName}}</u></b>
+        </h1>
+        <p style="text-align: center">By :{{data.AuthorName}}  </p>
+        <p style="text-align: center">Cost : Rs.{{data.Price}}</p>
+        <p style="text-align: center">Condition : {{data.Condition}}</p>
+        <p style="text-align: center">Seller : {{data.Seller}}</p>
+        <p style="text-align: center">
+          <button class="btn btn-primary btn-block" (click)="buyclick()">BUY</button><br>
+          <button class="btn btn-primary btn-block" name={{data.BookId}} id={{data.userTableId}} (click)="contactclick($event)">Contact Seller</button><br>
+          <button class="btn btn-primary btn-block"(click)="addtowishlist()">Add to Wishlist</button>
+        </p>
+         
+
+ 
+
+      </div>
+    </div>
+
+  </div>

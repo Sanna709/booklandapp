@@ -1,0 +1,14 @@
+
+<div class="topnav" [class.responsive]="apply" id="myTopnav">
+  <a routerLink="home" ><i class="fas fa-home"></i> Home</a>
+  <a routerLink="listing" ><i class="fas fa-book-open"></i> Listing</a>
+  <a routerLink="addlisting" ><i class="fas fa-plus-circle"></i> Add</a>
+  <a routerLink="wishlist" ><i class="fas fas fa-bookmark"></i> Wishlist</a>
+  <a routerLink="message" ><i class="fas fa-comments"></i> Message</a>
+  <a routerLink="signup" *ngIf="!getUserLoggedIn()"><i class="fas fa-user-plus"></i> Sign Up</a>
+  <a routerLink="login" *ngIf="!getUserLoggedIn()" ><i class="fas fa-sign-in-alt"></i> Log In</a>
+  <a routerLink="home" *ngIf="getUserLoggedIn()" (click)="logout()" ><i  class="fas fa-sign-out-alt"></i> Log Out</a>
+  <a routerLink="" class="icon" (click)="onclick()">
+    <i class="fa fa-bars"  ></i>
+  </a>
+</div>

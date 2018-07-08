@@ -1,0 +1,69 @@
+<div class="bgimg w3-display-container w3-text-white">
+  <div class="container">
+
+    <div class="row">
+      <div class="col"></div>
+      <h1 class="" style="text-align:center;">
+        <i class="fab fa-blogger-b"></i>ookland</h1>
+      <div class="col"></div>
+    </div>
+
+    <div class="row" style="background-color: rgb(0,0,0,0.5);margin-bottom: 20px">
+
+      <div class="col" style="margin-top:40px;margin-left:40px">
+        <h1>
+          <i class="fas fa-filter"></i> Filters :
+        </h1>
+      </div>
+
+      <div class="col" style="margin-top: 40px;">Book Name : 
+        <input type="text" [(ngModel)]=Book.name name="name" (ngModelChange)="BookChange()" class="form-control" style="color: black;margin-top: 10px" placeholder="Search.....">
+      </div>
+
+      <div class="col" style="margin-top: 40px;">Author Name : 
+          <input type="text" [(ngModel)]=Author.name name="name" (ngModelChange)="AuthorChange()" class="form-control" style="color: black;margin-top: 10px" placeholder="Search.....">
+        </div>
+
+      <div class="col" style="margin-top:20px">Price :
+        <div class="slidecontainer" style="margin-top:20px">
+          <input [(ngModel)]=MaxPrice.range (ngModelChange)="PriceChange()" type="range" name="range" min="0" max="2000" value="1000" class="slider" id="myRange">
+        </div>
+        <button type="button" style="margin-top:25px;margin-right: 10px;margin-left: 10px;" class="btn btn-dark " disabled>Max Price :</button>
+        <button type="button" style="margin-top:25px" class="btn btn-dark " disabled>{{MaxPrice["range"]}}</button>
+      </div>
+
+      <div class="col" style="margin-top:20px;margin-bottom: 20px">Condition :
+        <br>
+        <input [(ngModel)]=Condition.condition0  (ngModelChange)="Change()" type="checkbox" name="condition0" value="All" checked> All
+        <br>
+        <input [(ngModel)]=Condition.condition1 (ngModelChange)="Change()" type="checkbox" name="condition1" value="New"> New
+        <br>
+        <input [(ngModel)]=Condition.condition2 (ngModelChange)="Change()" type="checkbox" name="condition2" value="Almost New"> Almost New
+        <br>
+        <input [(ngModel)]=Condition.condition3 (ngModelChange)="Change()" type="checkbox" name="condition3" value=" Slight Damage"> Slight Damage
+        <br>
+        <input [(ngModel)]=Condition.condition4 (ngModelChange)="Change()" type="checkbox" name="condition4" value=" Worn"> Worn
+      </div>
+    </div>
+
+    <div class="row" id="booklist">
+      <div class="card mx-2 p-4" style="background-color: rgb(0,0,0,0.5);margin-bottom: 20px" *ngFor="let data of listdata">
+        <img class="card-img-top" src={{data.Photo}} alt="Card image cap" style="width: 200px;height:150px">
+        <div class="card-body">
+          <h5 style="text-align: center" class="card-title">
+            <b>{{data.BookName}}</b>
+          </h5>
+          <p style="text-align: center" class="card-text">By : {{data.AuthorName}}</p>
+          <p style="text-align: center" class="card-text">Rs.{{data.Price}}</p>
+          <p style="text-align: center" class="card-text">
+            <button class="btn btn-primary" [id]="data.BookId" (click)="onclick($event)" style="width:130px;align-content:center;margin-right:5px">View Details</button>
+            <button class="btn btn-bodorless" (click)="addtowishlist($event)" [name]="data.BookId" style="background-color: rgb(255,255,255,0.5)">
+              <i  class="fas fa-bookmark fa-2x"></i>
+            </button>
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>

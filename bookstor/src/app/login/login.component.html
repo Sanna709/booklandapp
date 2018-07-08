@@ -1,0 +1,36 @@
+<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+  <br>
+  <br>
+  <div id="loginbox" class="mainbox col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3">
+    <h1 class="" style="text-align:center;color:black">
+      <i class="fab fa-blogger-b" style="color:black"></i>ookland</h1>
+    <hr>
+    <h1 style="text-align:center;color:black">LogIn
+      <i class="fas fa-user" style="color:black"></i>
+    </h1>
+    <hr>
+    <form ngNativeValidate (ngSubmit)="login($event)" #heroForm="ngForm" name="form" [id]=loginUserData.user class="form-horizontal" enctype="multipart/form-data" method="">
+      <div class="input-group">
+        <span class="input-group-addon">
+          <i class="glyphicon glyphicon-user"></i>
+        </span>
+        <input required [(ngModel)]=loginUserData.user id="user" type="text" class="form-control "  name="user" value="" placeholder="User">
+      </div>
+      <br>
+      <div class="input-group">
+        <span class="input-group-addon">
+          <i class="glyphicon glyphicon-lock"></i>
+        </span>
+        <input [(ngModel)]=loginUserData.password required id="password" type="password" class="form-control "  name="password" placeholder="Password">
+      </div>
+      <br>
+      <div class="form-group">
+        <div class="col-sm-12 controls text-center">
+          <button [disabled]="!heroForm.form.valid"  class="btn btn-primary ">
+            <i class="glyphicon glyphicon-log-in"></i> Log in</button>
+        </div>
+      </div>
+      <hr>
+    </form>
+  </div>
+</div>

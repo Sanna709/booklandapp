@@ -1,0 +1,54 @@
+<div class="bgimg w3-display-container w3-text-white">
+  <div class="container">
+
+    <div class="row" style="color: black">
+      <div class="col"></div>
+      <h1 class="" style="text-align:center;">
+        <i class="fab fa-blogger-b"></i>ook
+        <b>L</b>and</h1>
+      <div class="col"></div>
+    </div>
+
+    <div class="row" style="width:80vw;height:70vh;">
+      <div class="col" style="background-color:rgb(0,0,0,0.5);overflow-y:auto">
+        <h1 style="font-family:'Courier';text-align:center">
+          <u>Message Sent</u>
+        </h1>
+        <h1 *ngIf="SentMsgEr" style="text-align:center;font-family: 'Courier';color:white;height: 200px">
+          <div class="row" style="height:50px;"></div>
+          <div class="row" style="margin:100px">
+            No Msg Sent!!
+          </div>
+        </h1>
+        <div class="card border-light" style="background-color: rgb(0,0,0,0.5);margin-top:10px;margin-bottom:10px" *ngFor="let Msg of SentMsg">
+          <h5 class="card-header ">TO : {{Msg.ReceiverName}}</h5>
+          <div class="card-body">
+            <p class="card-text">For Book Id : {{Msg.SelectedBookId}} AND Book Name : {{Msg.BookName}}</p>
+            <p class="card-text">{{Msg.Message}}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col" style="background-color:rgb(0,0,0,0.5);margin-left: 10px;overflow-y: auto;">
+        <h1 style="text-align:center;font-family: 'Courier'">
+          <u>Message Receive</u>
+        </h1>
+        <h1 *ngIf="ReceiveMsgEr" style="text-align:center;font-family: 'Courier';color:white;height: 200px">
+            <div class="row" style="height:50px;"></div>
+            <div class="row" style="margin:100px">
+              No Msg Received!!
+            </div>
+          </h1>
+
+        <div class="card border-light" style="background-color: rgb(0,0,0,0.5);margin-top:10px;margin-bottom:10px" *ngFor="let Msg of ReceiveMsg">
+          <h5 class="card-header">FROM : {{Msg.SenderName}}</h5>
+          <div class="card-body">
+            <p class="card-text">For Book Id : {{Msg.SelectedBookId}} AND Book Name : {{Msg.BookName}}</p>
+            <p class="card-text">{{Msg.Message}}</p>
+            <button class="btn btn-primary float-center" name={{Msg.SelectedBookId}} id={{Msg.SenderId}} (click)="contact($event)">Reply</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>

@@ -1,0 +1,70 @@
+<div class="bgimg w3-display-container w3-animate-opacity">
+    <br>
+    <div id="signup" class="mainbox col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 ">
+        <h1 class="" style="text-align:center;color:black">
+            <i class="fab fa-blogger-b" style="color:black"></i>ookland</h1>
+        <hr>
+        <h1 style="text-align:center;color:black">Add New Listing
+            <i class="fas fa-book-open" style="color:black"></i>
+        </h1>
+        <hr>
+        <form ngNativeValidate name="form" (ngSubmit)="upload(content)" #heroForm="ngForm" id="form" class="form-horizontal" enctype="multipart/form-data">
+            <div class="input-group">
+                <span class="input-group-addon">Book Name</span>
+                <input [(ngModel)]=addData.BookName id="BookName" type="text" class="form-control" required name="BookName" placeholder="Enter Book Name">
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon">Author Name</span>
+                <input [(ngModel)]=addData.AuthorName id="AuthorName" type="text" class="form-control" required name="AuthorName" placeholder="Enter Author Name">
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon">Price</span>
+                <input [(ngModel)]=addData.Price id="Price" type="text" class="form-control" required name="Price" placeholder="Enter Price">
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon">Condition</span>
+                <label style="background-color: whitesmoke; width:550px;height:32px;margin: auto;text-align: center;padding-top:5px">
+                    <input [(ngModel)]=addData.condition type="radio" required name="Condition" value="New"> New &nbsp; &nbsp;
+                    <input [(ngModel)]=addData.condition type="radio" required name="Condition" value="Almost New"> Almost New &nbsp; &nbsp;
+                    <input [(ngModel)]=addData.condition type="radio" required name="Condition" value="Slight Damage"> Slight Damage &nbsp; &nbsp;
+                    <input [(ngModel)]=addData.condition type="radio" required name="Condition" value="Worn"> Worn &nbsp; &nbsp;
+                </label>
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon">Photo</span>
+                <input id="Photo" type="file" (change)="onFileSelected($event)" class="form-control" required name="Photo">
+            </div>
+
+            <div class="input-group">
+                <span class="input-group-addon">Seller</span>
+                <input [value]="name" id="Seller" type="text" class="form-control" required name="Seller" disabled>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-12 controls text-center">
+                    <!-- <ng-template #content let-c="close" let-d="dismiss">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Modal title</h4>
+                            <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>One fine body&hellip;</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light" (click)="c('Close click')">Close</button>
+                        </div>
+                        </div>
+                    </ng-template> -->
+                    <button [disabled]="!heroForm.form.valid" class="btn btn-primary">
+                        Add
+                        <i class="fas fa-plus-circle"></i>
+                    </button>
+                </div>
+            </div>
+            <div *ngIf="Load" class="loader" style="margin: auto"></div>
+            <hr>
+        </form>
+    </div>
+</div>
